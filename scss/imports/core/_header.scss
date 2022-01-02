@@ -1,0 +1,187 @@
+header {
+    z-index: 10;
+    width: 100%;
+    height: 80px;   
+    position: fixed;
+    -webkit-user-select: none;
+    user-select: none;
+    .progress {
+        height: 3px;
+        background-color: $yellow-cl;
+        width: 0%;
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+    }
+    .container-fluid{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        background-color: $black-bg-cl;
+        z-index: 9;
+        .logo {
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .menu {
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            li{
+                display: flex;
+                text-transform: uppercase;
+                padding: 30px;
+                height: 100%;
+                width: 100%;
+                color: $text-white-cl;
+                font-family: pb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            li:hover {
+                color: $text-yellow-cl;
+                transition: $t;
+            }
+            &.active {
+                color: $text-yellow-cl;
+                text-decoration: underline;
+            }
+        }
+        .right {
+            .lang {
+                font-family: pb;
+                color: $text-white-cl;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                cursor: pointer;
+                width: 80px;
+                &__current {
+                    .lang__wrap{
+                        display: none;
+                        width: 100%;
+                        
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: $black-bg-cl;
+                        border-radius: 0 0 8% 8%;
+                        opacity: 0.7;
+                        a {
+                            padding: 8px 0;
+                            display: block;
+                            text-align: center;
+                            text-decoration: none;
+                            color: $text-white-cl;
+                        }
+                        a:hover {
+                            color: $text-yellow-cl;
+                        }
+                    }
+                }
+                img {
+                    margin: 6px;
+                }
+            }
+            .lang:hover{
+                .lang {
+                    &__current {
+                        .lang__wrap{
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .menu-btn {
+                display: none;
+                cursor: pointer;
+                margin: auto 0;
+                div {
+                    width: 40px;
+                    height: 3px;
+                    background-color: $white-cl;
+                    margin: 8px;
+                }
+                &.active {
+                    div {
+                        background-color: $yellow-cl;
+                    }
+                }
+            }
+        }
+    }
+    .nav {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        background-color: $black-bg-cl;
+        position: fixed;
+        @include transform(translateX(100%));
+        @include transition($t);
+        bottom: 0;
+        right: 0;
+        z-index: 8;
+        ul {
+            height: 100%;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-direction: column;
+            li{
+                text-align: center;
+                text-transform: uppercase;
+                color: $text-white-cl;
+                font-family: pb;
+                text-decoration: none;
+                cursor: pointer;
+                padding: 40px;
+            }
+            li:hover {
+                color: $text-yellow-cl;
+                transition: $t;
+                background-color: #131414;
+            }
+            &.active {
+                color: $text-yellow-cl;
+                text-decoration: underline;
+
+            }
+        }
+    }
+    @include sm {
+        .container-fluid {
+            .menu {
+                display: none;
+            }
+            .right {
+                display: inline-flex;
+                .menu-btn {
+                    display: block;
+                }
+            }
+        }
+        .nav {
+            &.active {
+                @include transform(translateX(0%));
+                @include transition($t);
+            }
+        }
+    }
+    @include xs {
+        height: 50px;
+    }
+}

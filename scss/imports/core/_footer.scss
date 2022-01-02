@@ -1,0 +1,43 @@
+// css footer
+footer {
+    padding: 20px 0;
+    background-color: $black-bg-cl;
+    height: 40px;
+    .container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        .copyright {
+            @include text(12px, 15px, "pr", $text-white-cl, none);
+            cursor: default;
+        }
+        .logo {
+            position: absolute;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+        .backtotop {
+            @include text(12px, 20px, "pr", $text-white-cl, none);
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+    
+    @include xs {
+        .container {
+            flex-direction: column-reverse;
+            padding: initial;
+            .logo {
+                position: initial;
+                left: initial;
+                @include transform(initial);
+                margin-bottom: 10px;
+            }
+            .backtotop {
+                display: none;
+            }
+        }
+    }
+}
