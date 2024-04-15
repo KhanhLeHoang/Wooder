@@ -150,7 +150,7 @@ videos.forEach((element) => {
 // Back to top button
 let backtotop = document.querySelector('.backtotop');
 backtotop.addEventListener('click', function() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 8000);
 })
 
 // Jquery

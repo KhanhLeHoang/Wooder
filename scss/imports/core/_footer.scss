@@ -1,6 +1,6 @@
 // css footer
 footer {
-    padding: 20px 0;
+    // padding: 20px 0;
     background-color: $black-bg-cl;
     height: 40px;
     .container {
@@ -26,14 +26,15 @@ footer {
     }
     
     @include xs {
+        height: auto;
         .container {
             flex-direction: column-reverse;
-            padding: initial;
+            padding: 10px 0;
             .logo {
                 position: initial;
-                left: initial;
                 @include transform(initial);
-                margin-bottom: 10px;
+                // margin-bottom: 10px;
+                padding-bottom: 5px;
             }
             .backtotop {
                 display: none;

@@ -173,6 +173,21 @@ header {
                     display: block;
                 }
             }
+            @include xxs{
+                .right {
+                    .lang {
+                        width: 50px;
+                    }
+                    .menu-btn {
+                        div {
+                            width: 20px;
+                            height: 2px;
+                            margin: 5px;
+                        }
+                    }
+                }
+
+            }
         }
         .nav {
             &.active {
